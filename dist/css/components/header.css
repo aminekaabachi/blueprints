@@ -7,8 +7,16 @@
   display: flex;
   flex-direction: row;
   gap: var(--spacing-unit);
-  align-items: flex-start;
   margin-bottom: calc(var(--spacing-unit) * 1.5);
+  align-items: flex-start;
+}
+
+.header-top-center {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-unit);
+  margin-bottom: calc(var(--spacing-unit) * 1.5);
+  align-items: center;
 }
 
 .site-title {

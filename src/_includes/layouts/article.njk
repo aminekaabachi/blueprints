@@ -1,0 +1,37 @@
+---
+layout: layouts/base.njk
+---
+
+<article class="article">
+  <!-- Article Header -->
+  <header class="article-header">
+    <div class="article-header-content">
+      <!-- Breadcrumb Navigation -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/" class="breadcrumb-link">ThinkOnRead</a>
+        <span class="breadcrumb-separator">/</span>
+        {% if category %}
+          <span class="breadcrumb-current">{{ category }}</span>
+        {% else %}
+          <span class="breadcrumb-current">Articles</span>
+        {% endif %}
+      </nav>
+      
+      <!-- Article Title -->
+      <h1 class="article-title">{{ title }}</h1>
+      
+      <!-- Article Date -->
+      <time class="article-date" datetime="{{ date | dateformat('MM YYYY') }}">
+        {{ date | dateformat('D M YYYY') }}
+      </time>
+    </div>
+  </header>
+
+  <!-- Article Content -->
+  <div class="article-content">
+    <div class="article-body">
+      {{ content | safe }}
+    </div>
+  </div>
+
+</article> 

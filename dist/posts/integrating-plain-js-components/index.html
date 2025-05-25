@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A blog about reading and thinking">
+    <title>ThinkOnRead</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+ 		<link
+			href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css"
+			rel="stylesheet"
+		/>
+  </head>
+  <body>
+        
+<article class="article">
+  <!-- Article Header -->
+  <header class="article-header">
+    <div class="article-header-content">
+      <!-- Breadcrumb Navigation -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/" class="breadcrumb-link">ThinkOnRead</a>
+        <span class="breadcrumb-separator">/</span>
+        
+          <span class="breadcrumb-current">Lessons from a bad React codebase</span>
+        
+      </nav>
+      
+      <!-- Article Title -->
+      <h1 class="article-title">Integrating plain JS components</h1>
+      
+      <!-- Article Date -->
+      <time class="article-date" datetime="1/31/2025">
+        January 31, 2025
+      </time>
+    </div>
+  </header>
+
+  <!-- Article Content -->
+  <div class="article-content">
+    <div class="article-body">
+      <p>This post is part of a series called &quot;Lessons from a bad React codebase&quot;. You can read more about this series <a href="#">here</a>.</p>
+<p>Things were not off to a great start.</p>
+<p>I had just cloned the project and I kept getting this cryptic error message when I tried to install the dependencies using <code>yarn</code>.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># This file contains the result of Yarn building a package (root-workspace-0b6124@workspace:.)</span>
+<span class="token comment"># Script name: postinstall</span>
+
+No matches found: <span class="token string">"node_modules/@playkit-js/playkit-js-kava/src/*"</span></code></pre>
+<p>Running the project returned yet another cryptic error message.</p>
+<pre class="language-python"><code class="language-python">error <span class="token operator">-</span> <span class="token punctuation">.</span><span class="token operator">/</span>src<span class="token operator">/</span>hooks<span class="token operator">/</span>useKaltura<span class="token punctuation">.</span>ts<span class="token punctuation">:</span><span class="token number">18</span><span class="token punctuation">:</span><span class="token number">27</span>
+Module <span class="token keyword">not</span> found<span class="token punctuation">:</span> Can<span class="token string">'t resolve '</span><span class="token decorator annotation punctuation">@playkit</span><span class="token operator">-</span>js<span class="token operator">/</span>playkit<span class="token operator">-</span>js<span class="token operator">-</span>kava<span class="token operator">/</span>src<span class="token operator">/</span>kava'
+<span class="token operator">></span> <span class="token number">18</span> <span class="token operator">|</span>     const <span class="token punctuation">{</span> Kava <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">"@playkit-js/playkit-js-kava/src/kava"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token operator">|</span>                           <span class="token operator">^</span>
+
+<span class="token number">19</span> <span class="token operator">|</span>     kalturaPlayer<span class="token punctuation">.</span>registerPlugin<span class="token punctuation">(</span><span class="token string">"kava"</span><span class="token punctuation">,</span> Kava<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>After a few hours of digging, I finally figured out what was going on. But we are just getting started with the problems in this codebase.</p>
+<h2>The Problem</h2>
+<p>The issue was related to how the project was trying to import and use external JavaScript libraries that weren't properly configured for the build system.</p>
+<h3>Understanding the Error</h3>
+<p>The error messages were indicating that:</p>
+<ol>
+<li><strong>Build-time issue</strong>: The postinstall script couldn't find the expected files</li>
+<li><strong>Runtime issue</strong>: The module resolution was failing for the Kaltura player plugin</li>
+</ol>
+<h3>The Solution</h3>
+<p>Here's how we eventually resolved these issues:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Instead of dynamic imports with specific paths</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> Kava <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">"@playkit-js/playkit-js-kava/src/kava"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// We used proper module resolution</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Kava <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@playkit-js/playkit-js-kava"</span><span class="token punctuation">;</span></code></pre>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Always check package.json for proper dependency declarations</li>
+<li>Avoid hardcoded paths in dynamic imports</li>
+<li>Use proper module resolution patterns</li>
+<li>Test your build process thoroughly</li>
+</ul>
+<p>This experience taught us valuable lessons about dependency management and module resolution in modern JavaScript projects.</p>
+
+    </div>
+  </div>
+
+</article> 
+  </body>
+</html> 

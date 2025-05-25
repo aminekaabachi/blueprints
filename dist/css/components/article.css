@@ -1,0 +1,267 @@
+/* Article Layout */
+.article {
+  margin: 0;
+  padding: 0;
+}
+
+/* Article Header */
+.article-header {
+  background: var(--color-background);
+  padding: calc(var(--spacing-unit) * 4) 0 calc(var(--spacing-unit) * 4);
+  margin: 0 calc(-1 * var(--spacing-unit));
+  position: relative;
+}
+
+.article-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background: radial-gradient(ellipse at center top, rgba(66, 153, 225, 0.1) 0%, transparent 70%); */
+  pointer-events: none;
+}
+
+.article-header-content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-unit);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb {
+  margin-bottom: calc(var(--spacing-unit) * 1.2);
+  font-size: var(--font-size-base);
+}
+
+.breadcrumb-link {
+  font-weight: 500;
+  color: var(--color-secondary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.breadcrumb-link:hover {
+  color: var(--color-text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-accent);
+}
+
+.breadcrumb-separator {
+  color: var(--color-secondary);
+  margin: 0 0.5rem;
+}
+
+.breadcrumb-current {
+  color: var(--color-secondary);
+}
+
+/* Article Title */
+.article-title {
+  font-size: calc(var(--font-size-large) * 1.2);
+  font-weight: 900;
+  color: var(--color-text);
+  margin: 0 0 calc(var(--spacing-unit) * 1.2);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+/* Article Date */
+.article-date {
+  display: inline-block;
+  font-size: var(--font-size-base);
+  color: var(--color-secondary);
+  font-weight: 500;
+  letter-spacing: 0.025em;
+}
+
+/* Article Content */
+.article-content {
+  background: #f8fafc;
+  margin: 0 calc(-1 * var(--spacing-unit));
+  min-height: 60vh;
+}
+
+.article-body {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: calc(var(--spacing-unit) * 3) var(--spacing-unit);
+  background-color: #f8fafc;
+  color: #334155;
+  line-height: 1.7;
+}
+
+/* Article Typography */
+.article-body h1,
+.article-body h2,
+.article-body h3,
+.article-body h4,
+.article-body h5,
+.article-body h6 {
+  color: #1e293b;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.article-body h1 {
+  font-size: var(--font-size-large);
+  margin: calc(var(--spacing-unit) * 2) 0 calc(var(--spacing-unit) * 1.5);
+}
+
+.article-body h2 {
+  font-size: var(--font-size-large);
+  margin: calc(var(--spacing-unit) * 2) 0 calc(var(--spacing-unit) * 1.5);
+}
+
+.article-body h3,
+.article-body h4,
+.article-body h5,
+.article-body h6 {
+  font-size: var(--font-size-base);
+  margin: calc(var(--spacing-unit) * 1.5) 0;
+}
+
+.article-body p {
+  margin: calc(var(--spacing-unit) * 1.5) 0;
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  color: #334155;
+}
+
+.article-body a {
+  color: #334155;
+  text-decoration: underline;
+  text-decoration-color: rgba(37, 99, 235, 0.3);
+  text-underline-offset: 2px;
+  transition: all 0.2s ease;
+}
+
+.article-body a:hover {
+  color: #1d4ed8;
+  text-decoration-color: #1d4ed8;
+}
+
+.article-body strong {
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.article-body em {
+  font-style: italic;
+  color: #475569;
+}
+
+/* Lists */
+.article-body ul,
+.article-body ol {
+  margin: calc(var(--spacing-unit) * 1.5) 0;
+  padding-left: calc(var(--spacing-unit) * 2);
+}
+
+.article-body li {
+  line-height: 1.5;
+  margin-bottom: calc(var(--spacing-unit) * 0.5);
+}
+
+.article-body li > p {
+  margin-bottom: 0;
+}
+
+/* Code Blocks */
+.article-body pre {
+  background: #1e293b;
+  color: #e2e8f0;
+  padding: calc(var(--spacing-unit) * 1.5);
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: calc(var(--spacing-unit) * 2) 0;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+}
+
+.article-body code {
+  padding: 2px 4px;
+  background-color: #1e1e1e;
+  border-radius: 4px;
+  color: #d4d4d4;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  font-size: var(--font-size-base);
+}
+
+.article-body pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* Blockquotes */
+.article-body blockquote {
+  border-left: 4px solid #2563eb;
+  padding-left: calc(var(--spacing-unit) * 1.5);
+  margin: calc(var(--spacing-unit) * 2) 0;
+  font-style: italic;
+  color: #475569;
+  background: #f1f5f9;
+  padding: calc(var(--spacing-unit) * 1.5);
+  border-radius: 0 8px 8px 0;
+}
+
+/* Images and Figures */
+.article-body figure {
+  margin: calc(var(--spacing-unit) * 2) 0;
+  text-align: center;
+}
+
+.article-body figcaption {
+  text-align: center;
+  color: var(--color-secondary);
+  font-size: var(--font-size-base);
+  margin-top: calc(var(--spacing-unit) * 0.25);
+}
+
+.article-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: calc(var(--spacing-unit) * 2) 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .article-header {
+    padding: calc(var(--spacing-unit) * 2) 0 calc(var(--spacing-unit) * 3);
+  }
+  
+  .article-title {
+    font-size: calc(var(--font-size-large) * 1.2);
+  }
+  
+  .article-body {
+    padding: calc(var(--spacing-unit) * 2) calc(var(--spacing-unit)*2);
+  }
+  
+  .article-body p {
+    margin: calc(var(--spacing-unit) * 1) 0;
+  }
+  
+  .article-body h1 {
+    font-size: var(--font-size-large);
+  }
+  
+  .article-body h2 {
+    font-size: var(--font-size-large);
+    margin: calc(var(--spacing-unit) * 1.5) 0 calc(var(--spacing-unit) * 1);
+  }
+  
+  .article-body img {
+    height: 200px;
+    object-fit: contain;
+  }
+} 

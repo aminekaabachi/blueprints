@@ -1,7 +1,7 @@
 ---
 title: Unity Catalog Architecture Patterns
 date: 2023-01-01
-layout: layout.njk
+layout: layouts/article.njk
 category: Databricks Architecture
 tags: post
 ---

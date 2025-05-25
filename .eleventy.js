@@ -1,6 +1,11 @@
+import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
+
+
 export default function(eleventyConfig) {
+  eleventyConfig.addPlugin(syntaxHighlight);
+
   // Add date filter
-  eleventyConfig.addFilter("date", function(date, format) {
+  eleventyConfig.addFilter("dateformat", function(date, format) {
     const d = new Date(date);
     if (format === 'YYYY-MM-DD') {
       return d.toISOString().split('T')[0];
@@ -16,6 +21,13 @@ export default function(eleventyConfig) {
       return d.toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'short'
+      });
+    }
+    if (format === 'D M YYYY') {
+      return d.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
       });
     }
     return d.toLocaleDateString();
