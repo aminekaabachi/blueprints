@@ -9,8 +9,7 @@
   --spacing-unit: 1rem;
   --border-color: #1a2332;
   --font-size-large: 1.5rem;
-  --font-size-regular: 1.2rem;
-  --font-size-small: 1rem;
+  --font-size-base: 1.125rem;
   --font-family: 'DM Sans', ui-sans-serif, -apple-system, "system-ui", "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
   color: var(--color-text);
 }
