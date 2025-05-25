@@ -22,7 +22,7 @@
 
 .newsletter-description {
   color: var(--color-secondary);
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-base);
   margin-bottom: calc(var(--spacing-unit) * 1.5);
   line-height: 1.5;
 }
@@ -45,7 +45,7 @@
   border-radius: 6px;
   background-color: var(--color-background);
   color: var(--color-text);
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-base);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -65,7 +65,7 @@
   color: white;
   border: none;
   border-radius: 6px;
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-base);
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.1s ease;
