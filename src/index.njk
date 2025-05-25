@@ -6,13 +6,13 @@ title: Home
 {% include "components/newsletter.njk" %}
 
 <div class="blog-categories">
-  {% set categories = collections.post | getCategories %}
+  {% set categories = collections.article | getCategories %}
   
   {% for category in categories %}
     <section class="category-section">
       <h2 class="category-heading">{{ category }}</h2>
       <div class="posts-list">
-        {% for post in collections.post | reverse %}
+        {% for post in collections.article | reverse %}
           {% if post.data.category == category %}
             <article class="post-item">
               <time class="post-date" datetime="{{ post.date | dateformat('YYYY-MM-DD') }}">{{ post.date | dateformat("MMM YYYY") }}</time>

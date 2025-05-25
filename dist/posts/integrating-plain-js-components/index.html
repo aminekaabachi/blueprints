@@ -82,162 +82,68 @@ Module <span class="token keyword">not</span> found<span class="token punctuatio
 <h2>Interactive Example</h2>
 <p>Here's a working example of proper module resolution in a React component:</p>
 <div class="excalidraw-container">
-  <iframe 
-    src="https://link.excalidraw.com/readonly/hyLEXamLPHX5PusstEYU" 
-    width="100%" 
-    height="100%" 
-    style="border: none;" 
-    title="Excalidraw Diagram"
-    loading="lazy"
-    allowfullscreen>
-  </iframe>
-  <div class="excalidraw-click-overlay" onclick="openExcalidrawFullscreen('https://link.excalidraw.com/readonly/hyLEXamLPHX5PusstEYU')"></div>
+  <a href="https://link.excalidraw.com/readonly/hyLEXamLPHX5PusstEYU" target="_blank" class="excalidraw-link">
+    <iframe 
+      src="https://link.excalidraw.com/readonly/hyLEXamLPHX5PusstEYU" 
+      width="100%" 
+      height="400px" 
+      style="border: none; pointer-events: none;" 
+      title="Excalidraw Diagram"
+      loading="lazy"
+      allowfullscreen>
+    </iframe>
+  </a>
 </div>
-  <div class="excalidraw-title">
-    <a href="https://link.excalidraw.com/readonly/hyLEXamLPHX5PusstEYU" target="_blank">
-      Excalidraw Diagram
-    </a>
-  </div>
-<!-- Fullscreen overlay -->
-<div id="excalidraw-fullscreen-overlay" class="excalidraw-overlay-hidden">
-  <div class="excalidraw-content">
-    <button onclick="closeExcalidrawFullscreen()" class="excalidraw-close-btn">✕</button>
-    <iframe id="excalidraw-fullscreen-iframe" src="" allowfullscreen></iframe>
-  </div>
+<div class="excalidraw-title">
+    <span>Excalidraw Diagram</span>
+  </span>
 </div>
 <style>
 .excalidraw-title {
   text-align: center;
-  font-size: var(--font-size-base);
+  padding: 10px 0;
   font-weight: 500;
   color: #666;
   text-decoration: none;
-
 }
 
-.excalidraw-title a {
-  color: #334155;
+.excalidraw-title span {
+  font-size: 16px;
+  color: #666;
   text-decoration: none;
   border-bottom: 1px solid #ccc;
 }
 
-.excalidraw-title a:hover {
-  color: #334155;
-  border-bottom: 1px solid #334155;
-}
 
-.external-link-icon {
-  font-size: 0.8em;
-  margin-right: 4px;
-  opacity: 0.7;
-}
+
 
 .excalidraw-container {
   position: relative;
 }
 
-.excalidraw-click-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-  z-index: 10;
-  background: transparent;
-}
-
-.excalidraw-overlay-hidden {
-  display: none;
-}
-
-.excalidraw-overlay-visible {
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0,0,0,0.9);
-  z-index: 999999;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-}
-
-.excalidraw-content {
+.excalidraw-link {
+  display: block;
   position: relative;
-  width: 95vw;
-  height: 95vh;
-  max-width: 95vw;
-  max-height: 95vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.excalidraw-close-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: #fff;
-  border: none;
-  padding: 10px 15px;
+  text-decoration: none;
   cursor: pointer;
-  border-radius: 5px;
-  font-size: 16px;
-  z-index: 1000000;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
-.excalidraw-close-btn:hover {
-  background: #f0f0f0;
-}
-
-#excalidraw-fullscreen-iframe {
+ a.excalidraw-link {
   width: 100%;
-  height: 100%;
+  /* height: 405px; */
+  /* min-height: 400px; */
+  background-color: #fff;
   border: none;
   border-radius: 8px;
+  box-shadow: 0 2px 2px 0px rgba(0, 0, 0, 0.1);
+  border: 3px solid #fff;
+  transition: border 0.2s ease;
 }
+
+a.excalidraw-link:hover {
+  border: 3px solid var(--color-accent);
+
 </style>
-<script>
-function openExcalidrawFullscreen(url) {
-  const overlay = document.getElementById('excalidraw-fullscreen-overlay');
-  const fullscreenIframe = document.getElementById('excalidraw-fullscreen-iframe');
-  
-  fullscreenIframe.src = url;
-  overlay.className = 'excalidraw-overlay-visible';
-  document.body.style.overflow = 'hidden';
-}
-
-function closeExcalidrawFullscreen() {
-  const overlay = document.getElementById('excalidraw-fullscreen-overlay');
-  const fullscreenIframe = document.getElementById('excalidraw-fullscreen-iframe');
-  
-  overlay.className = 'excalidraw-overlay-hidden';
-  fullscreenIframe.src = '';
-  document.body.style.overflow = '';
-}
-
-// Close on Escape key
-document.addEventListener('keydown', function(event) {
-  if (event.key === 'Escape') {
-    const overlay = document.getElementById('excalidraw-fullscreen-overlay');
-    if (overlay.className === 'excalidraw-overlay-visible') {
-      closeExcalidrawFullscreen();
-    }
-  }
-});
-
-// Close when clicking outside the iframe
-document.getElementById('excalidraw-fullscreen-overlay').addEventListener('click', function(event) {
-  if (event.target === this) {
-    closeExcalidrawFullscreen();
-  }
-});
-</script> 
 <p>You can also check out this helpful video explanation:</p>
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="JavaScript Module Resolution" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <p>This experience taught us valuable lessons about dependency management and module resolution in modern JavaScript projects.</p>

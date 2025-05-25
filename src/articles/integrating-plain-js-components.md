@@ -66,7 +66,7 @@ import { Kava } from "@playkit-js/playkit-js-kava";
 
 Here's a working example of proper module resolution in a React component:
 
-{% include "components/excalidraw.njk", url: "https://link.excalidraw.com/readonly/hyLEXamLPHX5PusstEYU", title: "Excalidraw Diagram" %}
+{% include "components/excalidraw-ext.njk", url: "https://link.excalidraw.com/readonly/hyLEXamLPHX5PusstEYU", title: "Excalidraw Diagram", height: "400px" %}
   
 You can also check out this helpful video explanation:
 

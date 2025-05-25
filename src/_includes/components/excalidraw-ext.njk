@@ -1,0 +1,65 @@
+<div class="excalidraw-container">
+  <a href="{{ url }}" target="_blank" class="excalidraw-link">
+    <iframe 
+      src="{{ url }}" 
+      width="100%" 
+      height="{{ height }}" 
+      style="border: none; pointer-events: none;" 
+      title="{{ title }}"
+      loading="lazy"
+      allowfullscreen>
+    </iframe>
+  </a>
+</div>
+<div class="excalidraw-title">
+    <span>{{ title }}</span>
+  </span>
+</div>
+
+<style>
+.excalidraw-title {
+  text-align: center;
+  padding: 10px 0;
+  font-weight: 500;
+  color: #666;
+  text-decoration: none;
+}
+
+.excalidraw-title span {
+  font-size: 16px;
+  color: #666;
+  text-decoration: none;
+  border-bottom: 1px solid #ccc;
+}
+
+
+
+
+.excalidraw-container {
+  position: relative;
+}
+
+.excalidraw-link {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+ a.excalidraw-link {
+  width: 100%;
+  /* height: 405px; */
+  /* min-height: 400px; */
+  background-color: #fff;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 2px 0px rgba(0, 0, 0, 0.1);
+  border: 3px solid #fff;
+  transition: border 0.2s ease;
+}
+
+a.excalidraw-link:hover {
+  border: 3px solid var(--color-accent);
+
+</style>
+
