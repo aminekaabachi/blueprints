@@ -1,3 +1,5 @@
+/* Import normalize CSS first for consistent baseline */
+@import url('./normalize.css');
 /* Import all component styles */
 @import url('./base.css');
 @import url('./components/header.css');

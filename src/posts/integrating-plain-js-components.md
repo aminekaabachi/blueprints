@@ -62,4 +62,14 @@ import { Kava } from "@playkit-js/playkit-js-kava";
 - Use proper module resolution patterns
 - Test your build process thoroughly
 
+## Interactive Example
+
+Here's a working example of proper module resolution in a React component:
+
+{% include "components/excalidraw.njk", url: "https://link.excalidraw.com/readonly/hyLEXamLPHX5PusstEYU", title: "Excalidraw Diagram" %}
+  
+You can also check out this helpful video explanation:
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="JavaScript Module Resolution" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 This experience taught us valuable lessons about dependency management and module resolution in modern JavaScript projects. 

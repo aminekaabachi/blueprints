@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A blog about reading and thinking">
+    <meta name="description" content="">
     <title>ThinkOnRead</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,5 +16,43 @@
   </head>
   <body>
         {{ content | safe }}
+        
+        <script>
+          // Refresh iframes on window resize
+          let resizeTimeout;
+          
+          function refreshIframes() {
+            const iframes = document.querySelectorAll('iframe');
+            iframes.forEach(iframe => {
+              const originalSrc = iframe.src;
+              if (originalSrc) {
+                // Temporarily remove src to force refresh
+                iframe.src = '';
+                // Use requestAnimationFrame to ensure the change is processed
+                requestAnimationFrame(() => {
+                  iframe.src = originalSrc;
+                });
+              }
+            });
+          }
+          
+          function handleResize() {
+            // Clear existing timeout
+            clearTimeout(resizeTimeout);
+            
+            // Set a new timeout to debounce the resize events
+            resizeTimeout = setTimeout(() => {
+              refreshIframes();
+            }, 250); // Wait 250ms after resize stops
+          }
+          
+          // Add resize event listener
+          window.addEventListener('resize', handleResize);
+          
+          // Optional: Also refresh on orientation change for mobile devices
+          window.addEventListener('orientationchange', () => {
+            setTimeout(refreshIframes, 100);
+          });
+        </script>
   </body>
 </html> 
