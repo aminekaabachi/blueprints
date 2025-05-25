@@ -1,6 +1,6 @@
 # thinkonread
 
-A minimal Eleventy blog inspired by [Frontend Undefined](https://www.frontendundefined.com/).
+A minimal Eleventy blog.
 
 ## Development
 
