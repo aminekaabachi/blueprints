@@ -62,7 +62,7 @@
 
 /* Article Title */
 .article-title {
-  font-size: calc(var(--font-size-large) * 1.2);
+  font-size: var(--font-size-large);
   font-weight: 900;
   color: var(--color-text);
   margin: 0 0 calc(var(--spacing-unit) * 1.2);
@@ -87,7 +87,7 @@
 }
 
 .article-body {
-  max-width: var(--max-width);
+  max-width: min(var(--max-width), 65ch);
   margin: 0 auto;
   padding: calc(var(--spacing-unit) * 3) var(--spacing-unit);
   background-color: #f8fafc;
@@ -240,7 +240,7 @@
   }
   
   .article-title {
-    font-size: calc(var(--font-size-large) * 1.2);
+    font-size: var(--font-size-large);
   }
   
   .article-body {
