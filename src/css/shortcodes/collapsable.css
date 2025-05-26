@@ -22,7 +22,7 @@
   justify-content: flex-start;
   font-size: 14px;
   font-weight: 600;
-  color: #334155;
+  color: var(--color-text-medium);
   text-align: left;
   transition: background-color 0.15s ease;
   border-radius: 3px;
@@ -37,7 +37,7 @@
   height: 24px;
   margin-right: 2px;
   transition: transform 0.2s ease;
-  color: #334155;
+  color: var(--color-text-medium);
   flex-shrink: 0;
 }
 
@@ -64,7 +64,7 @@
 .collapsable-body {
   padding: 2px 0 2px 26px;
   line-height: 1.5;
-  color: rgb(55, 53, 47);
+  color: var(--color-notion-dark);
   font-size: 14px;
 }
 

@@ -72,10 +72,25 @@
 }
 
 .newsletter-button:hover {
-  background-color: #3182ce;
+  background-color: var(--color-accent-hover);
   transform: translateY(-1px);
 }
 
 .newsletter-button:active {
   transform: translateY(0);
-} 
+}
+
+.newsletter-success,
+.newsletter-error {
+  display: none;
+  margin-top: var(--spacing-unit);
+  font-weight: 500;
+}
+
+.newsletter-success {
+  color: var(--color-success);
+}
+
+.newsletter-error {
+  color: var(--color-danger);
+}

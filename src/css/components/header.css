@@ -1,21 +1,22 @@
 /* Header Styles */
 .site-header {
   padding: calc(var(--spacing-unit) * 2) 0;
+  margin-bottom: calc(var(--spacing-unit) * 2);
 }
 
 .header-top {
   display: flex;
   flex-direction: row;
-  gap: var(--spacing-unit);
-  margin-bottom: calc(var(--spacing-unit) * 1.5);
+  gap: calc(var(--spacing-unit) * 1.5);
+  margin-bottom: calc(var(--spacing-unit) * 2);
   align-items: flex-start;
 }
 
 .header-top-center {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-unit);
-  margin-bottom: calc(var(--spacing-unit) * 1.5);
+  gap: calc(var(--spacing-unit) * 1.5);
+  margin-bottom: calc(var(--spacing-unit) * 2);
   align-items: center;
 }
 
