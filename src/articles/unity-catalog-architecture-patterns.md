@@ -4,6 +4,7 @@ date: 2025-04-22
 layout: layouts/article.njk
 category: Databricks Architecture
 tags: article
+
 ---
 
 > The views expressed in my articles are based on my personal experience and understanding, and do not represent official recommendations from Databricks. Peer reviews and feedback are always welcome.

@@ -26,6 +26,7 @@
 }
 
 .site-title a {
+  font-size: var(--font-size-large);
   color: var(--color-text);
   text-decoration: none;
   transition: color 0.2s ease;
@@ -41,7 +42,7 @@
   display: flex;
   gap: calc(var(--spacing-unit) * 0.2);
   align-items: center;
-  padding-top: calc(var(--spacing-unit) * 0.1);
+  padding-top: calc(var(--spacing-unit) * 0.2);
 }
 
 .nav-link {
