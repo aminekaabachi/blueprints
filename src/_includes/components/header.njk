@@ -2,10 +2,10 @@
   {% include "components/top-nav-left.njk" %}
   <div class="site-description">
     <p>
-      {{ site.description }}
+      {{ site.description | markdownify | safe }}
     </p>
     <p>
-      {{ site.subDescription }}
+      {{ site.subDescription | markdownify | safe }}
     </p>
   </div>
 </header> 

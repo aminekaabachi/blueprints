@@ -1,5 +1,7 @@
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import { RenderPlugin } from "@11ty/eleventy";
+import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+
 import markdownIt from "markdown-it"
 
 const md = markdownIt({ html: true });
@@ -60,6 +62,7 @@ export default function (eleventyConfig) {
   // ===== Plugins =====
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(RenderPlugin);
+	eleventyConfig.addPlugin(eleventyImageTransformPlugin);
 
   // ===== Shortcodes =====
   
@@ -79,6 +82,10 @@ export default function (eleventyConfig) {
   });
 
   // ===== Filters =====
+
+  eleventyConfig.addFilter('markdownify', (str) => {
+    return md.renderInline(str);
+  });
   
   // Date formatting filter
   eleventyConfig.addFilter("dateformat", function (date, format) {
@@ -124,6 +131,7 @@ export default function (eleventyConfig) {
   // ===== Static Asset Handling =====
   eleventyConfig.addPassthroughCopy('src/css');
   eleventyConfig.addPassthroughCopy('src/js');
+  eleventyConfig.addPassthroughCopy({ "src/images/favicon": "/" });
 
   // ===== Configuration =====
   return {

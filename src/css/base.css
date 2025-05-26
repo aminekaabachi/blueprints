@@ -22,8 +22,8 @@
   --color-notion-dark: #37352f;
   /* --font-size-large: 1.5rem;
   --font-size-base: 1.125rem; */
-  --font-size-large: 1.3rem;
-  --font-size-base: 1rem;
+  --font-size-large: 1.5rem;
+  --font-size-base: 1.125rem;
   --font-family: 'DM Sans', ui-sans-serif, -apple-system, "system-ui", "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
   color: var(--color-text);
 }
@@ -33,6 +33,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-optical-sizing: auto;
 }
 
 body {

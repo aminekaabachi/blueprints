@@ -4,7 +4,8 @@ date: 2025-04-22
 layout: layouts/article.njk
 category: Databricks Architecture
 tags: article
-
+slides: https://link.excalidraw.com/p/readonly/JCxoypcNeIiVr60avjG9
+youtube: https://www.youtube.com/watch?v=W4tqbEmplug
 ---
 
 > The views expressed in my articles are based on my personal experience and understanding, and do not represent official recommendations from Databricks. Peer reviews and feedback are always welcome.

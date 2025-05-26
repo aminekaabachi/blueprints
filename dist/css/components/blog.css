@@ -79,3 +79,25 @@
   line-height: 1.5;
   margin: 0;
 } 
+
+.post-links {
+  font-weight: 400;
+  padding-top: calc(var(--spacing-unit) * 0.5);
+  padding-bottom: calc(var(--spacing-unit) * 0.5);
+  display: flex;
+  flex-direction: row;
+  gap: calc(var(--spacing-unit) * 0.5);
+}
+
+.post-links a {
+  color: var(--color-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  border-bottom: none;
+}
+
+.post-links a:hover {
+  color: var(--color-text);
+  text-decoration: none;
+  border-bottom: none;
+}
