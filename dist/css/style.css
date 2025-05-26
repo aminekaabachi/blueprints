@@ -8,3 +8,7 @@
 @import url('./components/article.css');
 @import url('./components/footer.css');
 @import url('./responsive.css'); 
+
+
+@import url('./shortcodes/collapsable.css');
+@import url('./shortcodes/excalidraw.css');

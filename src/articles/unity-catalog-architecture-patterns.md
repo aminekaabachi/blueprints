@@ -28,7 +28,7 @@ Defining scopes is a non-trivial task that often requires creative problem solvi
 
 The straightforward approach is to align scopes directly with your existing organizational structure. Business lines, business units, or major projects—each with established ownership and accountability—serve as natural candidates for scope definition. 
 
-{% include "components/excalidraw-ext.njk", url: "https://link.excalidraw.com/readonly/iNsCzHJHg99o114KG4ma", title: "Figure 1: Common Scope Candidates in Business Structures", height: "200px" %}
+{% excalidraw "https://link.excalidraw.com/readonly/iNsCzHJHg99o114KG4ma",  "Figure 1: Common Scope Candidates in Business Structures", "200px" %}
 
 This method leverages familiar boundaries within the enterprise, simplifying governance and ensuring clear responsibility across the defined scopes.
 
@@ -38,7 +38,7 @@ The second, more thoughtful approach that requires deeper engagement and intenti
 
 Domain-Driven Design (DDD) offers a strategic approach to defining data domains by aligning technical systems with how the business actually operates. DDD segments complexity into Bounded Contexts—well-defined areas where data models, language, and ownership remain consistent. Each context reflects a shared understanding between business and technical teams, supported by a Ubiquitous Language that promotes clarity and collaboration across functions.
 
-{% include "components/excalidraw-ext.njk", url: "https://link.excalidraw.com/readonly/cKoEHEWHnncvNdGxsnv6", title: "Figure 2: Example of domain modeling for an energy company.", height: "300px" %}
+{% excalidraw "https://link.excalidraw.com/readonly/cKoEHEWHnncvNdGxsnv6",  "Figure 2: Example of domain modeling for an energy company.", "250px" %}
 
 DDD often aligns well with enterprises that are already domain-oriented or in the process of consolidating domains, offering a framework to bring structure and consistency to otherwise fragmented efforts. It reinforces broader initiatives in data governance, ownership, and platform modernization—resulting in a more business-aligned and future-ready data architecture.
 
@@ -51,3 +51,40 @@ DDD often aligns well with enterprises that are already domain-oriented or in th
 > In terms of implementation, scopes are typically defined using prefixes in catalog and/or schema names. Additionally, they can be assigned as tags within the properties of Unity Catalog assets.
 
 # Architecture Patterns
+
+## Logical Segregation Pattern
+
+Unity Catalog introduces a clear and scalable approach to organizing data through the segregation of both catalogs and schemas. Unlike Hive, which supported only schema-level segregation, Unity Catalog enables a more structured and modular architecture. This dual-level separation enhances metadata management and provides the flexibility required to support diverse data architecture patterns.
+
+{% excalidraw "https://link.excalidraw.com/readonly/TNUvYFKFbv8lxs7ggk4R",  "Figure 3: Segregation Pattern Diagram", "300px" %}
+
+**Practical Applications**
+
+ {%  collapsableBlock "Medallion Architecture", false %}
+The most prevalent application of the segregation pattern in Unity Catalog today is the medallion architecture. This framework enables structured curation of data through distinct layers—Bronze, Silver, and Gold—thereby improving data quality, governance, and reusability across the enterprise.      
+
+{% excalidraw "https://link.excalidraw.com/readonly/TNUvYFKFbv8lxs7ggk4R", "Figure 3: Segregation Pattern Diagram", "300px"  %}
+
+Depending on the complexity and operational needs, organizations can implement this architecture by segregating data into different catalogs or schemas, ensuring scalability, security, and clarity in data ownership.
+{% endcollapsableBlock %}
+
+
+ {% collapsableBlock "Data Product Types", false %}
+
+The most prevalent application of the segregation pattern in Unity Catalog today is the medallion architecture. This framework enables structured curation of data through distinct layers—Bronze, Silver, and Gold—thereby improving data quality, governance, and reusability across the enterprise.   
+
+{% excalidraw "https://link.excalidraw.com/readonly/TNUvYFKFbv8lxs7ggk4R", "Figure 3: Segregation Pattern Diagram", "300px" %}
+
+**Depending on the complexity and operational needs, organizations can implement this architecture by segregating data into different catalogs or schemas, ensuring scalability, security, and clarity in data ownership.**
+
+{% endcollapsableBlock %}
+
+
+
+ {% collapsableBlock "Publishing and Certification", false %}
+The most prevalent application of the segregation pattern in Unity Catalog today is the medallion architecture. This framework enables structured curation of data through distinct layers—Bronze, Silver, and Gold—thereby improving data quality, governance, and reusability across the enterprise.    
+
+{% excalidraw "https://link.excalidraw.com/readonly/TNUvYFKFbv8lxs7ggk4R",  "Figure 3: Segregation Pattern Diagram", "300px" %}
+
+Depending on the complexity and operational needs, organizations can implement this architecture by segregating data into different catalogs or schemas, ensuring scalability, security, and clarity in data ownership.
+{% endcollapsableBlock %}

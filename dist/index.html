@@ -156,8 +156,11 @@
           
           // Optional: Also refresh on orientation change for mobile devices
           window.addEventListener('orientationchange', () => {
-            setTimeout(refreshIframes, 100);
+            setTimeout(refreshIframes, 500); // Delay to allow orientation change to complete
           });
         </script>
+        
+        <!-- Collapsable component JavaScript -->
+        <script src="/js/collapsable.js"></script>
   </body>
 </html> 

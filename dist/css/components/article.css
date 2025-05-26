@@ -88,7 +88,7 @@
 }
 
 .article-body {
-  max-width: min(var(--max-width), 65ch);
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: calc(var(--spacing-unit) * 3) var(--spacing-unit);
   background-color: #f8fafc;

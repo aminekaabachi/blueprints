@@ -1,0 +1,94 @@
+/* Collapsable Component Styles - Notion-inspired Design */
+.collapsable {
+  border: none;
+  border-radius: 3px;
+  margin-bottom: 0.25rem;
+  background: transparent;
+  overflow: visible;
+  transition: all 0.15s ease;
+}
+
+.collapsable:hover {
+}
+
+.collapsable-header {
+  width: 100%;
+  padding: 0px 0px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+  text-align: left;
+  transition: background-color 0.15s ease;
+  border-radius: 3px;
+  min-height: 27px;
+}
+
+.collapsable-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-right: 2px;
+  transition: transform 0.2s ease;
+  color: #334155;
+  flex-shrink: 0;
+}
+
+.collapsable-header[aria-expanded="true"] .collapsable-icon {
+  transform: rotate(90deg);
+}
+
+.collapsable-title {
+  flex: 1;
+  line-height: 1.2;
+  user-select: none;
+}
+
+.collapsable-content {
+  overflow: hidden;
+  transition: all 0.2s ease;
+  max-height: 0;
+}
+
+.collapsable-content.is-open {
+  max-height: 2000px;
+}
+
+.collapsable-body {
+  padding: 2px 0 2px 26px;
+  line-height: 1.5;
+  color: rgb(55, 53, 47);
+  font-size: 14px;
+}
+
+/* Animation for smooth opening/closing */
+.collapsable-content:not(.is-open) .collapsable-body {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .collapsable-header {
+    padding: 4px 2px;
+    font-size: 14px;
+    min-height: 30px;
+  }
+  
+  .collapsable-body {
+    padding: 2px 0 2px 26px;
+    font-size: 14px;
+  }
+  
+  .collapsable-icon {
+    width: 24px;
+    height: 24px;
+  }
+}

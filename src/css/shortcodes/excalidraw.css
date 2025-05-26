@@ -1,0 +1,45 @@
+.excalidraw-title {
+    text-align: center;
+    padding: 10px 0;
+    font-weight: 500;
+    color: #666;
+    text-decoration: none;
+  }
+  
+  .excalidraw-title span {
+    font-size: 16px;
+    color: #666;
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .excalidraw-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .excalidraw-container iframe {
+    margin: 2px 0px;
+  }
+  
+  .excalidraw-link {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  a.excalidraw-link {
+    background-color: #fff;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px 0px rgba(0, 0, 0, 0.1);
+    border: 3px solid #fff;
+    transition: border 0.2s ease;
+  }
+  
+  a.excalidraw-link:hover {
+    border: 3px solid var(--color-accent);
+  }

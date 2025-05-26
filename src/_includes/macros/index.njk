@@ -1,0 +1,45 @@
+{% macro excalidrawEmbed(url, height = "400px", title = "Excalidraw Diagram") %}
+<div class="excalidraw-container">
+  <a href="{{ url }}" target="_blank" class="excalidraw-link">
+    <iframe 
+      src="{{ url }}" 
+      width="100%" 
+      height="{{ height }}" 
+      style="border: none; pointer-events: none;" 
+      title="{{ title }}"
+      loading="lazy"
+      allowfullscreen>
+    </iframe>
+  </a>
+</div>
+<div class="excalidraw-title">
+  <span>{{ title }}</span>
+</div>
+{% endmacro %}
+
+{% macro collapsableBlock(title, isOpen = false, id = "") %}
+<div class="collapsable" data-collapsable>
+  <button 
+    class="collapsable-header" 
+    aria-expanded="{{ 'true' if isOpen else 'false' }}"
+    aria-controls="collapsable-content-{{ id or caller.name or loop.index0 }}"
+    data-collapsable-trigger
+  >
+    <span class="collapsable-icon" aria-hidden="true">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4.5 3L7.5 6L4.5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+    <span class="collapsable-title">{{ title }}</span>
+  </button>
+  <div 
+    class="collapsable-content {{ 'is-open' if isOpen else '' }}" 
+    id="collapsable-content-{{ id or caller.name or loop.index0 }}"
+    data-collapsable-content
+  >
+    <div class="collapsable-body">
+      {{ caller() }}
+    </div>
+  </div>
+</div>
+{% endmacro %}
