@@ -2,15 +2,15 @@
     text-align: center;
     padding: 10px 0;
     font-weight: 500;
-    color: #666;
+    color: var(--color-gray);
     text-decoration: none;
   }
   
   .excalidraw-title span {
     font-size: 16px;
-    color: #666;
+    color: var(--color-gray);
     text-decoration: none;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--color-border-light);
   }
   
   .excalidraw-container {
@@ -32,11 +32,11 @@
   }
   
   a.excalidraw-link {
-    background-color: #fff;
+    background-color: var(--color-primary);
     border: none;
     border-radius: 8px;
     box-shadow: 0 2px 2px 0px rgba(0, 0, 0, 0.1);
-    border: 3px solid #fff;
+    border: 3px solid var(--color-primary);
     transition: border 0.2s ease;
   }
   

@@ -10,9 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const successMessage = document.createElement('div')
   successMessage.className = 'newsletter-success'
   successMessage.style.display = 'none'
-  successMessage.style.color = '#059669'
-  successMessage.style.marginTop = '1rem'
-  successMessage.style.fontWeight = '500'
   successMessage.textContent = 'Thanks for subscribing!'
   form.appendChild(successMessage)
 
@@ -20,9 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const errorMessage = document.createElement('div')
   errorMessage.className = 'newsletter-error'
   errorMessage.style.display = 'none'
-  errorMessage.style.color = '#DC2626'
-  errorMessage.style.marginTop = '1rem'
-  errorMessage.style.fontWeight = '500'
   errorMessage.textContent = 'Sorry, there was an error subscribing. Please try again.'
   form.appendChild(errorMessage)
 
