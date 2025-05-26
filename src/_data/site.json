@@ -1,3 +1,28 @@
 {
-  "title": "thinkOnRead.dev"
+  "title": "ThinkOnRead",
+  "description": "A space for exploring data architecture, lakehouse design, and the real-world challenges of building scalable data solutions. Maintained by Amine Kaabachi 👋, a solution architect at Databricks.",
+  "subDescription": "You'll find practical insights, deep-dives, architecture slides, and lessons learned from working with organizations solving complex data challenges. Whether you're building your first data pipeline, your AI agent or architecting enterprise-scale solutions, there's something here for your journey.",
+  "newsletter": {
+    "heading": "Stay in the loop 📬",
+    "description": "I'll share real-world insights from designing data architectures and working with customers at scale. No fluff, just the practical stuff I wish I'd known earlier.",
+    "placeholder": "Enter your email address",
+    "button": "Subscribe"
+  },
+  "footer": {
+    "copyright": "© Amine Kaabachi",
+    "links": {
+      "privacy": "Privacy Policy",
+      "aiUsage": "GenAI Policy"
+    }
+  },
+  "social": {
+    "twitter": {
+      "label": "X (Twitter)",
+      "url": "https://x.com/aminekaabachi"
+    },
+    "linkedin": {
+      "label": "LinkedIn",
+      "url": "https://linkedin.com/in/aminekaabachi"
+    }
+  }
 }
