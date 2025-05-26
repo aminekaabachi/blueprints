@@ -7,6 +7,27 @@ tags: article
 slides: https://link.excalidraw.com/p/readonly/JCxoypcNeIiVr60avjG9
 ---
 
+{% callout "info", "This is an informational message" %}
+{% callout "warning", "This is a warning message" %}
+{% callout "success", "This is a success message" %}
+{% callout "tip", "This is an informational message" %}
+{% callout "note", "This is an informational message" %}
+{% callout "error", "This is an informational message" %}
+
+```python
+import pandas as pd
+df = pandas.read()
+```
+
+{% calloutBlock %}
+This is a longer message that can span multiple lines
+and include **markdown** formatting.
+
+- List item 1
+- List item 2
+- List item 3
+{% endcalloutBlock "info" %}
+
 > The views expressed in my articles are based on my personal experience and understanding, and do not represent official recommendations from Databricks. Peer reviews and feedback are always welcome.
 
 Delta Lake has revolutionized how organizations handle data lakes by bringing ACID transactions, schema enforcement, and time travel capabilities to data lakes. This article explores common architectural patterns and best practices for implementing Delta Lake in production environments.
