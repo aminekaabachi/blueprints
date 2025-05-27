@@ -35,11 +35,11 @@
     background-color: var(--color-primary);
     border: none;
     border-radius: 8px;
-    box-shadow: 0 2px 2px 0px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 2px 2px 0px rgba(0, 0, 0, 0.1); */
     border: 3px solid var(--color-primary);
     transition: border 0.2s ease;
   }
   
   a.excalidraw-link:hover {
-    border: 3px solid var(--color-accent);
+    border: 3px solid var(--color-border-light);
   }

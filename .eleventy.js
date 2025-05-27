@@ -107,6 +107,13 @@ ${md.render(content)}
 }
 
 export default function (eleventyConfig) {
+
+  eleventyConfig.addPreprocessor("drafts", "*", (data, content) => {
+		if(data.draft && process.env.ELEVENTY_RUN_MODE === "build") {
+			return false;
+		}
+	});
+
   // ===== Plugins =====
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(RenderPlugin);
@@ -199,6 +206,7 @@ export default function (eleventyConfig) {
   // ===== Static Asset Handling =====
   eleventyConfig.addPassthroughCopy('src/css');
   eleventyConfig.addPassthroughCopy('src/js');
+  eleventyConfig.addPassthroughCopy('src/images/logo.svg');
   eleventyConfig.addPassthroughCopy({ "src/images/favicon": "/" });
 
   // ===== Configuration =====

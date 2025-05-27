@@ -1,10 +1,11 @@
 ---
-title: Delta Lake Architecture Patterns
+title: Elements
 date: 2025-04-23
 layout: layouts/article.njk
-category: Databricks Architecture
+category: SkewSkew
 tags: article
 slides: https://link.excalidraw.com/p/readonly/JCxoypcNeIiVr60avjG9
+draft: true
 ---
 
 {% callout "info", "This is an informational message" %}
