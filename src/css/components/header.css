@@ -100,3 +100,45 @@
   color: var(--color-text);
   border-bottom: 1px solid var(--color-accent);
 } 
+
+.author-section {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 1.125rem;
+}
+
+.author-section div {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.author-section a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.author-section a:hover {
+  opacity: 0.8;
+}
+
+.author-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.author-name {
+  font-size: var(--font-size-base);
+  font-weight: 500;
+} 
+
+.author-title {
+  font-size:   var(--font-size-base);
+  font-weight: 400;
+  color: var(--color-secondary);
+}
