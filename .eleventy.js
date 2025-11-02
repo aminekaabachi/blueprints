@@ -206,7 +206,7 @@ export default function (eleventyConfig) {
   // ===== Static Asset Handling =====
   eleventyConfig.addPassthroughCopy('src/css');
   eleventyConfig.addPassthroughCopy('src/js');
-  eleventyConfig.addPassthroughCopy('src/images/logo.svg');
+  eleventyConfig.addPassthroughCopy('src/images/logo.png');
   eleventyConfig.addPassthroughCopy({ "src/images/favicon": "/" });
 
   // ===== Configuration =====

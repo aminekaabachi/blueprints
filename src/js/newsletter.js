@@ -1,8 +1,7 @@
-// Handle newsletter form submission
 document.addEventListener('DOMContentLoaded', () => {
-  const supabaseUrl = 'https://uazseyqoisjfyixdpwhq.supabase.co'
-  const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVhenNleXFvaXNqZnlpeGRwd2hxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgyNTMyNjAsImV4cCI6MjA2MzgyOTI2MH0.cSUu3_eAvpC7GubsEOoFbCmk-ZDGnI-p2VEgkA6wBhs'
-  const supabase = window.supabase.createClient(supabaseUrl, supabaseKey)
+  // Replace this with your deployed Google Apps Script web app URL
+  const sheetEndpoint = 'https://script.google.com/macros/s/AKfycbzco2h0799YjYcIvvXQ5P8NARvMOHJCJJCokbr-QXDdH_gT0jwc1Lu0VUdiqwfmSTs8/exec'
+
   const form = document.querySelector('.newsletter-form')
   if (!form) return
 
@@ -22,24 +21,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault()
-    
+
     const emailInput = form.querySelector('input[type="email"]')
     const email = emailInput.value.trim()
-    
+
     if (!email) return
 
     try {
-      const { data, error } = await supabase
-        .from('emails')
-        .insert([{ email }])
+      const res = await fetch(sheetEndpoint, {
+        redirect: "follow",
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({ email })
+      })
 
-      if (error) throw error
+      const json = await res.json().catch(() => ({}))
+
+      if (!res.ok || json.result === 'error') {
+        throw new Error(json.error || 'Failed to save email')
+      }
 
       // Show success message and clear input
       emailInput.value = ''
       successMessage.style.display = 'block'
       errorMessage.style.display = 'none'
-      
+
       // Hide success message after 3 seconds
       setTimeout(() => {
         successMessage.style.display = 'none'
@@ -48,11 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('Error:', error.message)
       errorMessage.style.display = 'block'
       successMessage.style.display = 'none'
-      
+
       // Hide error message after 5 seconds
       setTimeout(() => {
         errorMessage.style.display = 'none'
       }, 5000)
     }
   })
-}) 
+})

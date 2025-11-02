@@ -24,7 +24,9 @@
   --font-size-base: 1.125rem; */
   --font-size-large: 1.5rem;
   --font-size-base: 1.125rem;
+  /* --font-family-heading: 'Merriweather', serif, -apple-system, "system-ui", "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; */
   --font-family: 'DM Sans', ui-sans-serif, -apple-system, "system-ui", "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-heading: var(--font-family);
   color: var(--color-text);
 }
 
@@ -59,6 +61,7 @@ main {
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.3;
+  font-family: var(--font-family-heading);
 }
 
 p {
