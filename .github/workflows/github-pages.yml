@@ -1,4 +1,4 @@
-name: build 11ty site
+name: build 11ty site updated
 
 on:
   push:
