@@ -1,7 +1,3 @@
-# thinkonread
-
-A minimal Eleventy blog.
-
 ## Development
 
 Install dependencies and start the development server:
